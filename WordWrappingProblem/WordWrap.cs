@@ -27,7 +27,7 @@ namespace WordWrappingProblem
         public IEnumerable<string> Wrap(string input, int width)
         {
             const string wordBreakPattern = @"\n";
-            const string wordSeparationPattern = @"\s+|";
+            const string wordSeparationPattern = @"\s+|(?<=[-,.;])|$";
 
             var forcedZones = Regex.Matches(input, wordBreakPattern).Cast<Match>().ToList();
             var normalZones = Regex.Matches(input, wordSeparationPattern).Cast<Match>().ToList();
