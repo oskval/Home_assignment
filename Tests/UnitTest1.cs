@@ -29,5 +29,17 @@ namespace Tests
             Assert.Equal(expectedString, fixedString);
         }
 
+        [Fact]
+         public void TestSecondCase()
+        {
+            var wordWrap = new WordWrap();
+            int width = 3;
+            string exampleString = "one two";
+            string expectedString = "one\ntwo";
+
+            string fixedString = wordWrap.Wrap(exampleString, width);
+            Assert.Equal(expectedString, fixedString);
+        }
+
     }
 }
