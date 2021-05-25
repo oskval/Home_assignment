@@ -1,4 +1,5 @@
 using System;
+using WordWrappingProblem;
 using Xunit;
 
 namespace Tests
@@ -6,9 +7,14 @@ namespace Tests
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void TestWordFix()
         {
+            var wordWrap = new WordWrap();
+            string expectedString = "This is a bad string";
+            string badString = "This is a \n bad     string";
+            string fixedString = wordWrap.FixStrings(badString);
 
+            Assert.Equal(expectedString, fixedString);
         }
     }
 }
