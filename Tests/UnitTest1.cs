@@ -16,5 +16,18 @@ namespace Tests
 
             Assert.Equal(expectedString, fixedString);
         }
+
+         [Fact]
+        public void TestFirstCase()
+        {
+            var wordWrap = new WordWrap();
+            int width = 7;
+            string exampleString = "one two";
+            string expectedString = "one two";
+
+            string fixedString = wordWrap.Wrap(exampleString, width);
+            Assert.Equal(expectedString, fixedString);
+        }
+
     }
 }

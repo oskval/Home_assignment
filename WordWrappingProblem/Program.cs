@@ -30,6 +30,10 @@ namespace WordWrappingProblem
 
             // String fixing and wrapping
             string fixedText = wordWrap.FixStrings(textFromFile);
+            string outputToWrite = wordWrap.Wrap(fixedText, Int32.Parse(args[1]));
+
+            // Write final answers to file
+            File.WriteAllText("./answers.txt", outputToWrite);
         }
     }
 }
