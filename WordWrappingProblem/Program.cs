@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace WordWrappingProblem
 {
@@ -27,13 +29,11 @@ namespace WordWrappingProblem
 
             // Class declaration
             var wordWrap = new WordWrap();
-
-            // String fixing and wrapping
+            
             string fixedText = wordWrap.FixStrings(textFromFile);
-            string outputToWrite = wordWrap.Wrap(fixedText, Int32.Parse(args[1]));
+            string wrappedText = string.Join("\n", wordWrap.Wrap(fixedText, Int32.Parse(args[1])));
 
-            // Write final answers to file
-            File.WriteAllText("./answers.txt", outputToWrite);
+            File.WriteAllText("./answers.txt", wrappedText);
         }
     }
 }

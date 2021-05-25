@@ -25,7 +25,7 @@ namespace Tests
             string exampleString = "one two";
             string expectedString = "one two";
 
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -37,7 +37,7 @@ namespace Tests
             string exampleString = "one two";
             string expectedString = "one\ntwo";
 
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -49,7 +49,7 @@ namespace Tests
             string exampleString = "oneoneoneoneoneee";
             string expectedString = "one\none\none\none\none\nee";
 
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
          [Fact]
@@ -60,7 +60,7 @@ namespace Tests
             string exampleString = "Green metal stick";
             string expectedString = "Green metal\nstick";
 
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -72,7 +72,7 @@ namespace Tests
             string exampleString = "Establishment of the church";
             string expectedString = "Establi\nshment\nof the\nchurch";
 
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -84,7 +84,7 @@ namespace Tests
             string exampleString = "Lorem ipsum dolor sit amet";
             string expectedString = "Lorem ipsum dolor sit amet";
             
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -96,7 +96,7 @@ namespace Tests
             string exampleString = "1234 1 1234";
             string expectedString = "123\n4 1\n123\n4";
             
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -108,7 +108,7 @@ namespace Tests
             string exampleString = "Establishmentestablishment";
             string expectedString = "Establi\nshmente\nstablis\nhment";
             
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
@@ -120,7 +120,7 @@ namespace Tests
             string exampleString = "Establishmentestablishment a of the the church";
             string expectedString = "Establi\nshmente\nstablis\nhment a\nof the\nthe\nchurch";
             
-            string fixedString = wordWrap.Wrap(exampleString, width);
+            string fixedString = string.Join("\n", wordWrap.Wrap(exampleString, width));
             Assert.Equal(expectedString, fixedString);
         }
 
