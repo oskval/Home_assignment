@@ -41,5 +41,18 @@ namespace Tests
             Assert.Equal(expectedString, fixedString);
         }
 
+         [Fact]
+         public void TestThirdCase()
+        {
+            var wordWrap = new WordWrap();
+            int width = 3;
+            string exampleString = "oneoneoneoneoneee";
+            string expectedString = "one\none\none\none\none\nee";
+
+            string fixedString = wordWrap.Wrap(exampleString, width);
+            Assert.Equal(expectedString, fixedString);
+        }
+
+
     }
 }

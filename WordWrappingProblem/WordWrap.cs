@@ -58,6 +58,26 @@ namespace WordWrappingProblem
                             output = output.Insert(output.Length, "\n") + wordArray[i];
                             lastLineLength = wordArray[i].Length + 1;
                         }
+                        // If the word does not fit into a line by itself
+                        else if (wordArray[i].Length > width)
+                        {
+                            if (i != 0)
+                            {
+                                output += "\n";
+                                lastLineLength++;
+                            }
+                            int chunkWidth = (wordArray[i].Length / width) + 1;
+                            int extraPosition = 0;
+                            
+                            // Iteration over chuncks
+                            for (int j = 1; j < chunkWidth; j++)
+                            {
+                                wordArray[i] = wordArray[i].Insert((width * j) + extraPosition, "\n");
+                                extraPosition++;
+                            }
+                            output += wordArray[i];
+                            lastLineLength = wordArray[i].Length - wordArray[i].LastIndexOf("\n") - 1;
+                        }
 
                     }
 
