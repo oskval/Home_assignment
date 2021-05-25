@@ -50,6 +50,16 @@ namespace WordWrappingProblem
                         output += wordArray[i];
                         lastLineLength += wordArray[i].Length;
                     }
+                    else if (lastLineLength + wordArray[i].Length >= width)
+                    {
+                        // If the word can be inserted into an empty line
+                        if (wordArray[i].Length <= width)
+                        {
+                            output = output.Insert(output.Length, "\n") + wordArray[i];
+                            lastLineLength = wordArray[i].Length + 1;
+                        }
+
+                    }
 
                 }
 
