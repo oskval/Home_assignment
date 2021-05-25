@@ -80,6 +80,9 @@ namespace WordWrappingProblem
                         }
 
                     }
+                    else
+                        // Something went wrong
+                        System.Console.WriteLine("Something unexpected happened");
 
                 }
 
